@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build and Run (Fast)",
+      "type": "shell",
+      "command": "g++ -O2 '${file}' -o '${workspaceFolder}\\bin\\${fileBasenameNoExtension}.exe' -I '${workspaceFolder}\\include' -L '${workspaceFolder}\\lib' -lfreeglut -lopengl32 -lglu32 -lglew32 -lFreeImage; if ($?) { & '${workspaceFolder}\\bin\\${fileBasenameNoExtension}.exe' }",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Build Only",
+      "type": "shell",
+      "command": "g++ -O2 '${file}' -o '${workspaceFolder}\\bin\\${fileBasenameNoExtension}.exe' -I '${workspaceFolder}\\include' -L '${workspaceFolder}\\lib' -lfreeglut -lopengl32 -lglu32 -lglew32 -lFreeImage",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
+
+// Output ke folder ke bin
+// "${workspaceFolder}\\bin\\${fileBasenameNoExtension}.exe",
+
+// output di folder yang sama dengan source code
+// "${fileDirname}\\${fileBasenameNoExtension}.exe",
